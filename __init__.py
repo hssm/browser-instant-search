@@ -1,5 +1,5 @@
 # https://github.com/hssm/browser-instant-search
-# Version 1.0
+# Version 1.1
 
 from aqt import *
 from aqt.theme import theme_manager

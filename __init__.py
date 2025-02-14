@@ -31,12 +31,10 @@ class InstantSearch:
                 self.maybe_save_history(text)
             except Exception as err:
                 self.save_at = None
-                # This is breaking the browser UI ??? This has to be a qt bug.
-                # if theme_manager.night_mode:
-                #     self.browser.form.searchEdit.setStyleSheet("QComboBox {background-color: #4a3a36;}")
-                # else:
-                #     self.browser.form.searchEdit.setStyleSheet("QComboBox {background-color: #ffc9b9;}")
-                pass
+                if theme_manager.night_mode:
+                    self.browser.form.searchEdit.setStyleSheet("QComboBox {background-color: #4a3a36;}")
+                else:
+                    self.browser.form.searchEdit.setStyleSheet("QComboBox {background-color: #ffc9b9;}")
 
     def maybe_save_history(self, text):
         """Schedule for saving with a debounce"""
